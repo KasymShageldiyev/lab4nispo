@@ -1,0 +1,10 @@
+﻿NAMESPACE            NAME                                         READY   STATUS    RESTARTS   AGE     IP           NODE                 NOMINATED NODE   READINESS GATES
+kube-system          coredns-559f6c778d-2b6sh                     1/1     Running   0          2m16s   10.244.0.3   lab4-control-plane   <none>           <none>
+kube-system          coredns-559f6c778d-zbx8s                     1/1     Running   0          2m16s   10.244.0.4   lab4-control-plane   <none>           <none>
+kube-system          etcd-lab4-control-plane                      1/1     Running   0          2m22s   172.24.0.2   lab4-control-plane   <none>           <none>
+kube-system          kindnet-4scjl                                1/1     Running   0          2m16s   172.24.0.2   lab4-control-plane   <none>           <none>
+kube-system          kube-apiserver-lab4-control-plane            1/1     Running   0          2m22s   172.24.0.2   lab4-control-plane   <none>           <none>
+kube-system          kube-controller-manager-lab4-control-plane   1/1     Running   0          2m22s   172.24.0.2   lab4-control-plane   <none>           <none>
+kube-system          kube-proxy-fn2l7                             1/1     Running   0          2m16s   172.24.0.2   lab4-control-plane   <none>           <none>
+kube-system          kube-scheduler-lab4-control-plane            1/1     Running   0          2m22s   172.24.0.2   lab4-control-plane   <none>           <none>
+local-path-storage   local-path-provisioner-75f7fc7dc5-kv92j      1/1     Running   0          2m16s   10.244.0.2   lab4-control-plane   <none>           <none>

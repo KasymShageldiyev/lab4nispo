@@ -1,0 +1,30 @@
+﻿Name:         replica-demo
+Namespace:    lab4
+Selector:     app=replica-demo
+Labels:       <none>
+Annotations:  <none>
+Replicas:     3 current / 3 desired
+Pods Status:  3 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pod Template:
+  Labels:  app=replica-demo
+  Containers:
+   busybox:
+    Image:      busybox:1.37.0
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      sh
+      -c
+      sleep 86400
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Events:
+  Type    Reason            Age    From                   Message
+  ----    ------            ----   ----                   -------
+  Normal  SuccessfulCreate  6m38s  replicaset-controller  Created pod: replica-demo-x5qzj
+  Normal  SuccessfulCreate  6m38s  replicaset-controller  Created pod: replica-demo-sc2tm
+  Normal  SuccessfulCreate  6m38s  replicaset-controller  Created pod: replica-demo-sxmg9
+  Normal  SuccessfulCreate  85s    replicaset-controller  Created pod: replica-demo-fghxw

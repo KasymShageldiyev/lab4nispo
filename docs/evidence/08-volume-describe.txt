@@ -1,0 +1,82 @@
+﻿Name:             volume-demo
+Namespace:        lab4
+Priority:         0
+Service Account:  default
+Node:             lab4-control-plane/172.24.0.2
+Start Time:       Fri, 30 Oct 2026 01:48:41 +0300
+Labels:           <none>
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.5
+IPs:
+  IP:  10.244.0.5
+Containers:
+  writer:
+    Container ID:  containerd://96e119981fe6e3e817d8ed65a01ce130ebcc454532da1bed055d1a006f38fc11
+    Image:         busybox:1.37.0
+    Image ID:      docker.io/library/busybox@sha256:a7dbc319b1438115a207e11930dc4bb3e643dcb3ec0bdd694bb36cd8fad289ec
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sh
+      -c
+      sleep 86400
+    State:          Running
+      Started:      Fri, 30 Oct 2026 01:48:44 +0300
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /data from shared-data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-zhztp (ro)
+  reader:
+    Container ID:  containerd://a3c83a3420a9e5a55a1e9ce907327a8941ee4889136ecdd7a55b24b8406bf277
+    Image:         busybox:1.37.0
+    Image ID:      docker.io/library/busybox@sha256:a7dbc319b1438115a207e11930dc4bb3e643dcb3ec0bdd694bb36cd8fad289ec
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sh
+      -c
+      sleep 86400
+    State:          Running
+      Started:      Fri, 30 Oct 2026 01:48:44 +0300
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /shared from shared-data (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-zhztp (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  shared-data:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  <unset>
+  kube-api-access-zhztp:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  38s   default-scheduler  Successfully assigned lab4/volume-demo to lab4-control-plane
+  Normal  Pulling    38s   kubelet            spec.containers{writer}: Pulling image "busybox:1.37.0"
+  Normal  Pulled     35s   kubelet            spec.containers{writer}: Successfully pulled image "busybox:1.37.0" in 2.836s (2.836s including waiting). Image size: 2222118 bytes.
+  Normal  Created    35s   kubelet            spec.containers{writer}: Container created
+  Normal  Started    35s   kubelet            spec.containers{writer}: Container started
+  Normal  Pulled     35s   kubelet            spec.containers{reader}: Container image "busybox:1.37.0" already present on machine and can be accessed by the pod
+  Normal  Created    35s   kubelet            spec.containers{reader}: Container created
+  Normal  Started    35s   kubelet            spec.containers{reader}: Container started
